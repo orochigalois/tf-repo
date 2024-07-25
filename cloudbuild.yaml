@@ -1,6 +1,6 @@
 options:
   logging: CLOUD_LOGGING_ONLY
-  
+
 steps:
 - id: 'branch name'
   name: 'alpine'
@@ -40,5 +40,6 @@ steps:
       exit 0
     else
       echo "Branch is not 'prod', skipping terraform apply."
+      terraform apply --auto-approve
       exit 0
     fi
